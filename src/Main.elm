@@ -72,12 +72,6 @@ getColors creed val =
 
         valSoFar =
             String.dropRight (String.length normalizedCreed - String.length normalizedPracticeVal) normalizedCreed
-
-        _ =
-            Debug.log "creed" normalizedCreed
-
-        _ =
-            Debug.log "val so far" valSoFar
     in
     if normalizedCreed == normalizedPracticeVal then
         ( rgb 0 1 0, rgb 0 1 0 )
