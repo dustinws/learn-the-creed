@@ -1,0 +1,24 @@
+{
+  "name": "learn-the-creed",
+  "version": "0.0.1",
+  "description": "A tool to help service members learn and freshen up on various military creeds.",
+  "author": "Dustin Stiles <duwstiles@pm.me>",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/dustinws/learn-the-creed#readme",
+  "scripts": {
+    "build": "elm-app build",
+    "start": "elm-app start",
+    "test": "elm-test"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinws/learn-the-creed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dustinws/learn-the-creed/issues"
+  }
+}
