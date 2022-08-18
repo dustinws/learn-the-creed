@@ -1,33 +1,41 @@
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import creeds from '../creeds';
 import classNames from '../utils/classNames';
 
-interface Props {
-  readonly stanzas: string[];
-}
+export default function Creed() {
+  const { slug } = useParams();
+  const creed = creeds.get(slug);
 
-export default function Creed({ stanzas }: Props) {
+  if (!creed) {
+    return <h1>Creed {slug} is not supported yet.</h1>;
+  }
+
   return (
-    <>
-      {stanzas.map((stanza, index) => (
+    <div className="m-6">
+      <h1>{creed.name}</h1>
+      {creed.stanzas.map((stanza: string, index: number) => (
           <>
             <div className="m-4">
               <p key={index}>{stanza}</p>
             </div>
           </>
         ))}
-
-    <button
+      <Link to={`/creeds/${slug}/practice`}>
+        <button
           className={classNames(
             'p-2',
             'rounded',
             'border-2',
-            'border-indigo-500/100',
-            'text-indigo-500/100',
-            'hover:border-indigo-800',
-            'hover:text-indigo-800',
+            'border-white',
+            'text-white',
+            'hover:border-slate-300',
+            'hover:text-slate-300',
           )}
         >
           Practice
         </button>
-    </>
+      </Link>
+    </div>
   );
 }
