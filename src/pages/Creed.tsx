@@ -15,11 +15,11 @@ export default function Creed() {
     <div className="m-6">
       <h1>{creed.name}</h1>
       {creed.stanzas.map((stanza: string, index: number) => (
-          <>
+          <div key={stanza}>
             <div className="m-4">
               <p key={index}>{stanza}</p>
             </div>
-          </>
+          </div>
         ))}
       <Link to={`/creeds/${slug}/practice`}>
         <button

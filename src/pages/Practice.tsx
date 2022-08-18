@@ -1,9 +1,10 @@
-import { useParams } from 'react-router';
-import classNames from '../utils/classNames';
-import creeds from '../creeds';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { check, CheckResult, toBackground } from '../domain/checker';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
+
+import creeds from '../creeds';
+import classNames from '../utils/classNames';
+import { check, toBackground } from '../domain/checker';
 
 export default function Practice() {
   const [userInput, setUserInput] = useState<string>('');
@@ -17,6 +18,8 @@ export default function Practice() {
   const result = check(creed.stanzas, userInput);
   const bgColor: string = toBackground(result);
 
+  console.log(bgColor)
+
   return (
     <div className="flex flex-col space-y-4">
       <Link to={`/creeds/${slug}`}>Back To Creed</Link>
@@ -29,7 +32,6 @@ export default function Practice() {
             'rounded-md',
             'm-6',
             'p-6',
-            'bg-slate-400',
             'text-black',
             bgColor,
           )
