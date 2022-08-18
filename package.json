@@ -20,5 +20,10 @@
   },
   "bugs": {
     "url": "https://github.com/dustinws/learn-the-creed/issues"
+  },
+  "devDependencies": {
+    "create-elm-app": "^5.22.0",
+    "elm-format": "^0.8.5",
+    "elm-test": "^0.19.1-revision9"
   }
 }
