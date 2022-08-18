@@ -7,7 +7,7 @@ import Creed from './pages/Creed';
 
 export default function App() {
   return (
-    <div className="bg-slate-600 h-screen w-screen text-white">
+    <div className="bg-slate-600 h-full min-h-screen w-screen text-white">
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />

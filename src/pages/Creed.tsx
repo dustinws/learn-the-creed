@@ -12,7 +12,7 @@ export default function Creed() {
   }
 
   return (
-    <div className="m-6">
+    <div className="m-6 overflow-auto">
       <h1>{creed.name}</h1>
       {creed.stanzas.map((stanza: string, index: number) => (
           <div key={stanza}>
