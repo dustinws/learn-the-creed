@@ -1,5 +1,4 @@
 import classNames from '../utils/classNames';
-import Github from '../assets/github.svg';
 
 export default function Header() {
   return (
