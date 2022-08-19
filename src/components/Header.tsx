@@ -8,6 +8,8 @@ export default function Header() {
   return (
     <div
       className={classNames(
+        'fixed',
+        'top-0',
         'flex',
         'w-full',
         'items-center',
