@@ -23,6 +23,9 @@ export default function Header() {
       >
         Learn the Creed
       </div>
+      <div className="font-thin px-4">
+        v0.0.4
+      </div>
     </div>
   );
 }
