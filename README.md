@@ -1,5 +1,7 @@
 # Learn the Creed
 
+![](./usage.gif)
+
 ---
 
 ### Building Locally
