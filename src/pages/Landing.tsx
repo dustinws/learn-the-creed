@@ -4,16 +4,6 @@ import creeds, { Creed } from '../creeds';
 export default function Landing() {
   return (
     <div className="flex flex-col m-10 h-screen space-y-10 items-center">
-      <p className="italic text-2xl">An interactive tool for learning military creeds.</p>
-      <p className="text-xl">
-        Don
-        {'\''}
-        t see the creed you want to practice? Just email us
-        {' '}
-        <a href="mailto:duwstiles@pm.me" className="text-blue-400">here</a>
-        {' '}
-        and we will add it.
-      </p>
       {[...creeds.values()].map((creed: Creed) => (
         <Link
           key={creed.slug}
