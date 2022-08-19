@@ -1,4 +1,5 @@
 import classNames from '../utils/classNames';
+import pkg from '../../package.json';
 
 export default function Header() {
   return (
@@ -19,7 +20,7 @@ export default function Header() {
         </a>
         <div
           className={classNames(
-            'text-4xl',
+            'text-xl',
             'pl-4',
             'justify-self-center',
           )}
@@ -27,7 +28,7 @@ export default function Header() {
           Learn the Creed
         </div>
         <div className="font-thin px-4">
-          v0.0.4
+          {`v${pkg.version}`}
         </div>
       </div>
       <div>
