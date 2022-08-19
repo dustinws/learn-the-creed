@@ -35,5 +35,5 @@ export function toBackground(result: CheckResult) {
 function normalize(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[^\w]/ig, '');
+    .replace(/[^\w|\s]/ig, '');
 }
