@@ -9,13 +9,11 @@ export default function App() {
   return (
     <div className="h-full min-h-screen w-screen">
       <Header />
-      <div className="mt-20">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/creeds/:slug" element={<Creed />} />
-          <Route path="/creeds/:slug/practice" element={<Practice />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/creeds/:slug" element={<Creed />} />
+        <Route path="/creeds/:slug/practice" element={<Practice />} />
+      </Routes>
     </div>
   );
 }
