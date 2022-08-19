@@ -1,10 +1,15 @@
 import classNames from '../utils/classNames';
 import pkg from '../../package.json';
 
+import seargentPng from '../assets/seargent.png';
+import githubPng from '../assets/github.png';
+
 export default function Header() {
   return (
     <div
       className={classNames(
+        'fixed',
+        'top-0',
         'flex',
         'w-full',
         'items-center',
@@ -16,7 +21,7 @@ export default function Header() {
     >
       <div className="flex items-center">
         <a href="/">
-          <img className="h-8" src="/seargent.png" alt="" />
+          <img className="h-8" src={seargentPng} alt="" />
         </a>
         <div
           className={classNames(
@@ -33,7 +38,7 @@ export default function Header() {
       </div>
       <div>
         <a href="https://github.com/dustinws/learn-the-creed">
-          <img className="h-8" src="/github.png" alt="" />
+          <img className="h-8" src={githubPng} alt="" />
         </a>
       </div>
     </div>
