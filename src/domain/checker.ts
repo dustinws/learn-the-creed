@@ -22,11 +22,13 @@ export function check(stanzas: string[], userInput: string): CheckResult {
 export function toBackground(result: CheckResult) {
   switch (result) {
     case CheckResult.Passed:
-      return 'bg-green-400';
+      return 'bg-green-100';
     case CheckResult.Failed:
-      return 'bg-red-400';
+      return 'bg-red-100';
     case CheckResult.StillWriting:
-      return 'bg-slate-400';
+      return 'bg-white';
+    default:
+      throw new Error();
   }
 }
 

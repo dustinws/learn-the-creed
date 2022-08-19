@@ -1,5 +1,7 @@
 # Learn the Creed
 
+![](./usage.gif)
+
 ---
 
 ### Building Locally
@@ -22,3 +24,7 @@ Build the project into a static directory.
 **npm run dev**
 
 Start a local development server that will watch for file changes.
+
+**npm run lint**
+
+Run the linter against all of the source files.
