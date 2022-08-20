@@ -22,11 +22,15 @@ export default function Practice() {
   return (
     <div className="flex flex-col px-6 py-4 space-y-4 justify-center flex-grow">
       <Link to={`/creeds/${creed.slug}`}>
-        <button type="button">
-          Back To Main
+        <button
+          type="button"
+          className="border-2 p-2 rounded border-slate-400 hover:shadow-md"
+        >
+          Back To Creed
         </button>
       </Link>
-      <div className="font-thin">
+      <div className="m-6 text-2xl">{creed.name}</div>
+      <div className="m-6 font-thin">
         * Punctuation and capitalization does not matter. Only the words.
       </div>
       <textarea
