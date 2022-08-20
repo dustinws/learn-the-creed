@@ -1,11 +1,24 @@
-import { Link } from 'react-router-dom';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
+import { Link, useLocation } from 'react-router-dom';
 import classNames from './utils/classNames';
 import pkg from '../package.json';
 
+import menuSvg from './assets/menu.svg';
 import seargentPng from './assets/seargent.png';
-import githubPng from './assets/github.png';
 
-export default function Header() {
+interface Props {
+  readonly toggleMenu: () => void;
+}
+
+export default function Header({ toggleMenu }: Props) {
+  const location = useLocation();
+
+  const homeFont = location.pathname === '/' ? 'font-semibold' : 'font-thin';
+  const aboutFont = location.pathname === '/about' ? 'font-semibold' : 'font-thin';
+  const contactFont = location.pathname === '/contact' ? 'font-semibold' : 'font-thin';
+
   return (
     <div
       className={classNames(
@@ -38,19 +51,39 @@ export default function Header() {
         </div>
       </div>
       <div className="flex items-center space-x-6 text-lg font-thin">
-        <Link to="/about">
-          <div>
-            About
-          </div>
+        <div className="flex sm:hidden">
+          <img className="h-7 cursor-pointer" src={menuSvg} onClick={toggleMenu} alt="" />
+        </div>
+        <Link
+          to="/"
+          className={classNames(
+            'hidden',
+            'sm:flex',
+            homeFont,
+          )}
+        >
+          Home
         </Link>
-        <Link to="/contact">
-          <div>
-            Contact
-          </div>
+        <Link
+          to="/about"
+          className={classNames(
+            'hidden',
+            'sm:flex',
+            aboutFont,
+          )}
+        >
+          About
         </Link>
-        <a href="https://github.com/dustinws/learn-the-creed">
-          <img className="h-6" src={githubPng} alt="" />
-        </a>
+        <Link
+          to="/contact"
+          className={classNames(
+            'hidden',
+            'sm:flex',
+            contactFont,
+          )}
+        >
+          Contact
+        </Link>
       </div>
     </div>
   );
