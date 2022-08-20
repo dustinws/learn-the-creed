@@ -2,20 +2,14 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import creeds from '../creeds';
 import classNames from '../utils/classNames';
+import UnknownCreed from './UnknownCreed';
 
-export default function Creed() {
+export default function Review() {
   const { slug } = useParams();
   const creed = creeds.get(slug || '');
 
   if (!creed) {
-    return (
-      <h1>
-        Creed
-        {slug}
-        {' '}
-        is not supported yet.
-      </h1>
-    );
+    return <UnknownCreed creedName={slug!} />;
   }
 
   return (

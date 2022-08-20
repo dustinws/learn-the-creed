@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Header from './components/Header';
+import Header from './Header';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Landing from './pages/Landing';
 import Practice from './pages/Practice';
-import Creed from './pages/Creed';
+import Review from './pages/Review';
 
 export default function App() {
   return (
@@ -11,7 +13,9 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/creeds/:slug" element={<Creed />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/creeds/:slug" element={<Review />} />
         <Route path="/creeds/:slug/practice" element={<Practice />} />
       </Routes>
     </div>
