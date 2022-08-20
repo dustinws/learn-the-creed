@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import creeds from '../creeds';
 import classNames from '../utils/classNames';
 import { check, toBackground } from '../domain/checker';
+import UnknownCreed from './UnknownCreed';
 
 export default function Practice() {
   const [userInput, setUserInput] = useState<string>('');
@@ -12,14 +13,7 @@ export default function Practice() {
   const creed = creeds.get(slug || '');
 
   if (!creed) {
-    return (
-      <h1>
-        Creed
-        {slug}
-        {' '}
-        is not yet supported
-      </h1>
-    );
+    return <UnknownCreed creedName={slug!} />;
   }
 
   const result = check(creed.stanzas, userInput);
