@@ -4,8 +4,8 @@ export enum CheckResult {
   StillWriting,
 }
 
-export function check(stanzas: string[], userInput: string): CheckResult {
-  const expected = normalize(stanzas.join(' '));
+export function check(creed: string, userInput: string): CheckResult {
+  const expected = normalize(creed);
   const actual = normalize(userInput);
 
   const expectedSoFar = expected.slice(0, actual.length);
