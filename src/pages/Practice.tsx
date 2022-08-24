@@ -9,6 +9,7 @@ import UnknownCreed from './UnknownCreed';
 
 export default function Practice() {
   const [userInput, setUserInput] = useState<string>('');
+  const [selectedStanza, setSelectedStanza] = useState<null | string>(null);
   const { slug } = useParams();
   const creed = creeds.get(slug || '');
 
@@ -16,7 +17,9 @@ export default function Practice() {
     return <UnknownCreed creedName={slug!} />;
   }
 
-  const result = check(creed.stanzas, userInput);
+  const result = selectedStanza
+    ? check(selectedStanza, userInput)
+    : check(creed.stanzas.join(' '), userInput);
   const bgColor: string = toBackground(result);
 
   return (
@@ -29,7 +32,22 @@ export default function Practice() {
           Back To Creed
         </button>
       </Link>
-      <div className="m-6 text-2xl">{creed.name}</div>
+      <div className="flex items-center">
+        <div className="m-6 text-2xl">{creed.name}</div>
+        <select>
+          <option onClick={() => setSelectedStanza(null)} value="entire-creed">Entire Creed</option>
+          {creed.stanzas.map((stanza, index) => (
+            <option
+              key={stanza}
+              onClick={() => setSelectedStanza(stanza)}
+            >
+              Stanza
+              {' '}
+              {index + 1}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="m-6 font-thin">
         * Punctuation and capitalization does not matter. Only the words.
       </div>
