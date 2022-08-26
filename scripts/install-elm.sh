@@ -32,4 +32,4 @@ chmod +x elm
 # path every time. We can do this by moving the `elm` binary to one of the
 # directories listed in your `PATH` environment variable:
 #
-sudo mv elm /usr/local/bin/
+mv elm /usr/local/bin/
