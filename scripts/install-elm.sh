@@ -32,8 +32,4 @@ chmod +x elm
 # path every time. We can do this by moving the `elm` binary to one of the
 # directories listed in your `PATH` environment variable:
 #
-
-mkdir elm-temp
-mv elm elm/temp
-
-export PATH=$PATH:$(pwd)/elm-temp
+alias elm=$(pwd)/elm
