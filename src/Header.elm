@@ -88,7 +88,7 @@ renderVersion =
         [ A.class "font-thin"
         , A.class "px-4"
         ]
-        [ text "v0.0.10" ]
+        [ text "v0.0.11" ]
 
 
 renderLink : String -> String -> Html msg
