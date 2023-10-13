@@ -1,22 +1,21 @@
 {
-  "name": "courier-browser",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "NODE_ENV=production && vite build",
-    "preview": "vite preview",
-    "test": "elm-test"
-  },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.2",
-    "autoprefixer": "^10.4.8",
-    "elm-doc-preview": "^5.0.5",
-    "elm-test": "^0.19.1-revision9",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8",
-    "vite": "^3.0.7",
-    "vite-plugin-elm": "^2.7.2"
-  }
+    "name": "learn-the-creed",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --port 3000",
+        "build": "NODE_ENV=production && vite build",
+        "postinstall": "elm-tooling install",
+        "test": "elm-test-rs"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.6",
+        "autoprefixer": "^10.4.16",
+        "elm-tooling": "^1.15.0",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.3.3",
+        "vite": "^4.4.11",
+        "vite-plugin-elm": "^2.8.0"
+    }
 }
